@@ -1,18 +1,6 @@
 rpi3:
-  acquired: ellesmere/sglass
-  acquired_resources:
-  - - kea
-    - rpi3
-    - NetworkUSBSDWireDevice
-    - USBSDWireDevice
-  - - kea
-    - rpi3
-    - NetworkSerialPort
-    - USBSerialPort
-  - - kea
-    - rpi3
-    - NetworkYKUSHPowerPort
-    - YKUSHPowerPort
+  acquired: null
+  acquired_resources: []
   aliases: []
   allowed: []
   changed: 1712679100.6097796

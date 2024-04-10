@@ -1,3 +1,11 @@
+#
+# kea: crosbar configuration file
+#
+# This provides the generic configuration needed fo run:
+#
+#   crossbar start --config crossbar-kea.yaml
+#
+
 version: 2
 workers:
 - type: router

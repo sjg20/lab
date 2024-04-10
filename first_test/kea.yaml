@@ -1,3 +1,10 @@
+##
+## kea lab: local resources to be exported with:
+##
+##    labgrid-exporter kea.yaml
+##
+## The devices
+
 rpi3:
   location: 'USB hub C'
   USBSerialPort:

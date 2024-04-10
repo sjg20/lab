@@ -1,3 +1,8 @@
+#
+# kea environment - information about targets
+#
+# This lists the targets (boards) and what drivers are needed for each
+
 targets:
   rpi3:
     resources:
@@ -5,7 +10,8 @@ targets:
         name: rpi3
 
     drivers:
-      SerialDriver: {}
+      SerialDriver:
+        txdelay: 0.001
       USBSDWireDriver: {}
       YKUSHPowerDriver: {}
       UBootDriver:
