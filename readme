@@ -18,11 +18,12 @@ LG_CROSSBAR=ws://kea:20408/ws labgrid-exporter ../cfg/export_kea.yaml
 Sync places
 -----------
 
-LG_CROSSBAR=ws://kea:20408/ws  ../labgrid/contrib/sync-places.py sync ../cfg/places_kea.yaml
+ellesmere:
+LG_CROSSBAR=ws://kea:20408/ws ../labgrid/contrib/sync-places.py sync cfg/places_kea.yaml
 
 
 Run the client
 --------------
 
 LG_CROSSBAR=ws://kea:20408/ws labgrid-client -p rpi3 acquire
-LG_CROSSBAR=ws://kea:20408/ws labgrid-client -c ../cfg/env_kea.cfg -s uboot console
+LG_CROSSBAR=ws://kea:20408/ws labgrid-client -c cfg/env_kea.cfg -s uboot console
