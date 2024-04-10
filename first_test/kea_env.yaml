@@ -1,0 +1,17 @@
+targets:
+  rpi3:
+    resources:
+      RemotePlace:
+        name: rpi3
+
+    drivers:
+      SerialDriver: {}
+      USBSDWireDriver: {}
+      YKUSHPowerDriver: {}
+      UBootDriver:
+        prompt: 'U-Boot>'
+      ShellDriver:
+        prompt: 'root@\w+:[^ ]+ '
+        login_prompt: ' login: '
+        username: 'root'
+      UBootStrategy: {}

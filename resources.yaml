@@ -1,0 +1,40 @@
+kea:
+  rpi3:
+    USBSDWireDevice:
+      acquired: rpi3
+      avail: true
+      cls: NetworkUSBSDWireDevice
+      params:
+        busnum: 1
+        control_serial: sdwire-18
+        devnum: 12
+        extra:
+          proxy: kea
+          proxy_required: false
+        host: kea
+        model_id: 24577
+        path: /dev/sdo
+        vendor_id: 1256
+    USBSerialPort:
+      acquired: rpi3
+      avail: true
+      cls: NetworkSerialPort
+      params:
+        extra:
+          path: /dev/ttyUSB16
+          proxy: kea
+          proxy_required: false
+        host: kea
+        port: 50913
+        speed: 115200
+    YKUSHPowerPort:
+      acquired: rpi3
+      avail: true
+      cls: NetworkYKUSHPowerPort
+      params:
+        extra:
+          proxy: kea
+          proxy_required: false
+        host: kea
+        index: 1
+        serial: YK17698

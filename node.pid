@@ -1,0 +1,22 @@
+{
+    "pid": 480187, 
+    "argv": [
+        "crossbar", 
+        "start", 
+        "--config", 
+        "crossbar-kea.yaml"
+    ], 
+    "options": {
+        "debug_lifecycle": false, 
+        "debug_programflow": false, 
+        "command": "start", 
+        "color": "auto", 
+        "loglevel": "info", 
+        "logformat": "standard", 
+        "logdir": null, 
+        "logtofile": false, 
+        "cbdir": "/vid/software/devel/ubtest/lab", 
+        "config": "crossbar-kea.yaml", 
+        "shutdownafter": null
+    }
+}

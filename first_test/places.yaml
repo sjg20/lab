@@ -1,0 +1,26 @@
+rpi3:
+  acquired: null
+  acquired_resources: []
+  aliases: []
+  allowed: []
+  changed: 1712671063.15669
+  comment: ''
+  created: 1712607665.573051
+  matches:
+  - cls: NetworkUSBSDWireDevice
+    exporter: kea
+    group: rpi3
+    name: null
+    rename: null
+  - cls: NetworkSerialPort
+    exporter: kea
+    group: rpi3
+    name: null
+    rename: null
+  - cls: YKUSHPowerPort
+    exporter: kea
+    group: rpi3
+    name: null
+    rename: null
+  reservation: null
+  tags: {}
