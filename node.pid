@@ -1,10 +1,10 @@
 {
-    "pid": 509826, 
+    "pid": 510262, 
     "argv": [
         "crossbar", 
         "start", 
         "--config", 
-        "crossbar-kea.yaml"
+        "cfg/crossbar-kea.yaml"
     ], 
     "options": {
         "debug_lifecycle": false, 
@@ -16,7 +16,7 @@
         "logdir": null, 
         "logtofile": false, 
         "cbdir": "/vid/software/devel/ubtest/lab", 
-        "config": "crossbar-kea.yaml", 
+        "config": "cfg/crossbar-kea.yaml", 
         "shutdownafter": null
     }
 }

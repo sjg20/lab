@@ -4,3 +4,5 @@
 
 places:
   rpi3:
+    matches:
+      - kea/rpi3/*

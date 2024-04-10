@@ -1,14 +1,26 @@
 rpi3:
-  acquired: null
-  acquired_resources: []
+  acquired: ellesmere/sglass
+  acquired_resources:
+  - - kea
+    - rpi3
+    - NetworkUSBSDWireDevice
+    - USBSDWireDevice
+  - - kea
+    - rpi3
+    - NetworkSerialPort
+    - USBSerialPort
+  - - kea
+    - rpi3
+    - NetworkYKUSHPowerPort
+    - YKUSHPowerPort
   aliases: []
   allowed: []
-  changed: 1712679100.6097796
+  changed: 1712773883.307709
   comment: ''
   created: 1712679039.7595882
   matches:
   - cls: '*'
-    exporter: '*'
+    exporter: kea
     group: rpi3
     name: null
     rename: null
