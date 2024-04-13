@@ -36,7 +36,11 @@ class Rpi3Strategy(Strategy):
         self.sdmux.set_mode("host")
 
         self.target.activate(self.storage)
-        image = self.target.env.config.get_image_path("u-boot.bin")
+
+        builder = self.target.get_driver("UBootProviderDriver")
+        image = builder.build()
+
+        #image = self.target.env.config.get_image_path("u-boot.bin")
         self.storage.write_files([image], pathlib.PurePath("/rpi3-u-boot.bin"),
                                  1, False)
         self.target.deactivate(self.storage)
