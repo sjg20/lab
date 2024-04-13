@@ -22,7 +22,6 @@ class Rpi3Strategy(Strategy):
         "console": "ConsoleProtocol",
         "uboot": "UBootDriver",
         "shell": "ShellDriver",
-        #"ubootbuild": "UBootBuildDriver",
     }
 
     status = attr.ib(default=Status.unknown)
