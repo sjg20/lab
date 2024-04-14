@@ -6,3 +6,7 @@ places:
   rpi3:
     matches:
       - kea/rpi3/*
+
+  opi_pc:
+    matches:
+      - kea/opi_pc/*

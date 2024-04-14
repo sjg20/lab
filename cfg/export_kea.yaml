@@ -6,18 +6,41 @@
 ## The devices
 
 rpi3:
-  location: 'USB hub C'
+  location: 'lab'
   USBSerialPort:
-    ## usbhubc-port4
+    ## ttyusb-port1
+    ## hubc-port4
+    ## sdwire0
     match:
       '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.4:1.0'
 
   USBSDWireDevice:
-    ## usbhubc-port9
+    ## sdwire0
+    ## hubc-port9
     match:
-      ## '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.4.1.2'
+      ## '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.4.1.2' ??
       'ID_SERIAL_SHORT': 'sdwire-18'
 
   YKUSHPowerPort:
     serial: 'YK17698'
+    index: 1
+
+opi_pc:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb-port1
+    ## hubc-port7
+    match:
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.3.3:1.0'
+
+  USBSDWireDevice:
+    ## sdwire2
+    ## hubc-port8
+    match:
+      'ID_SERIAL_SHORT': '202001064001'
+
+  NetworkPowerPort:
+    # dli_main_port1
+    model: digitalloggers_http
+    host: http://admin:pass@192.168.4.19
     index: 1

@@ -53,7 +53,6 @@ class UBootProviderDriver(Driver):
         build_path = os.path.join(self.build_base, self.board)
         commit = get_var('commit')
         patch = get_var('patch')
-        print('commit', commit)
 
         cmd = [
             self.tool,

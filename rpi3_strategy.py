@@ -5,6 +5,7 @@ import pathlib
 
 from labgrid.factory import target_factory
 from labgrid.strategy.common import Strategy, StrategyError
+from labgrid.var_dict import get_var
 
 
 class Status(enum.Enum):
@@ -36,9 +37,8 @@ class Rpi3Strategy(Strategy):
 
         self.target.activate(self.storage)
 
-        builder = self.target.get_driver("UBootProviderDriver",
-                                         allow_missing=True)
-        if builder:
+        if get_var('do-build'):
+            builder = self.target.get_driver("UBootProviderDriver")
             image = builder.build()
         else:
             image = self.target.env.config.get_image_path("u-boot.bin")
@@ -63,7 +63,7 @@ class Rpi3Strategy(Strategy):
         elif status == Status.bootstrapped:
             self.bootstrap()
         elif status == Status.uboot:
-            if not self.bootstrapped:
+            if not self.bootstrapped and get_var('do-bootstrap'):
                 self.transition(Status.bootstrapped)
 
             self.target.activate(self.console)
