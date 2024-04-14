@@ -27,19 +27,17 @@ class UBootProviderDriver(Driver):
     board = attr.ib(validator=attr.validators.instance_of(str))
     output = attr.ib(default='u-boot.bin',
                      validator=attr.validators.instance_of(str))
-    source_dir = attr.ib(default=os.getcwd(),
-                         validator=attr.validators.instance_of(str))
 
     def __attrs_post_init__(self):
         super().__attrs_post_init__()
         env = self.target.env
         if env:
             self.tool = env.config.get_tool('buildman')
-            self.source_dir = env.config.get_tool('buildman')
         else:
             self.tool = 'buildman'
         self.build_base = env.config.get_path("uboot_build_base")
         self.workdirs = env.config.get_path("uboot_workdirs")
+        self.sourcedir = env.config.get_path("uboot_source")
 
     @Driver.check_active
     @step(title='build')
@@ -54,7 +52,7 @@ class UBootProviderDriver(Driver):
         """
         build_path = os.path.join(self.build_base, self.board)
         commit = get_var('commit')
-
+        patch = get_var('patch')
         print('commit', commit)
 
         cmd = [
@@ -65,16 +63,20 @@ class UBootProviderDriver(Driver):
             '-W',
         ]
 
-        # If we have a commit, use a worktree
+        # If we have a commit, use a worktree. Otherwise we just use the source
+        # in the current directory
+        detail = 'in sourcedir'
         workdir = None
         if commit:
             workdir = self.setup_worktree(commit)
-            #cmd += [
-                #'-g', workdir,
-            #]
-        print(f"Building U-Boot for {self.board}")
+            detail = 'in workdir'
+            if patch:
+                self.apply_patch(workdir, patch)
+                detail += ' with patch'
+
+        print(f"Building U-Boot {detail} for {self.board}")
         self.logger.debug(f"cwd:{os.getcwd()} cmd:{cmd}")
-        processwrapper.check_output(cmd, cwd=workdir)
+        processwrapper.check_output(cmd, cwd=workdir or self.sourcedir)
         fname = os.path.join(build_path, self.output)
         return fname
 
@@ -101,6 +103,16 @@ class UBootProviderDriver(Driver):
             ]
             self.logger.info(f"Setting up worktree in {workdir}")
             processwrapper.check_output(cmd, cwd=self.workdirs)
+        else:
+            cmd = [
+                'git',
+                '-C', workdir,
+                'reset',
+                '--hard',
+            ]
+            self.logger.info(f"Reseting up worktree in {workdir}")
+            processwrapper.check_output(cmd, cwd=self.workdirs)
+
         self.select_commit(commit)
         return workdir
 
@@ -113,8 +125,34 @@ class UBootProviderDriver(Driver):
         workdir = os.path.join(self.workdirs, self.board)
         cmd = [
             'git',
+            '-C', workdir,
             'checkout',
             commit,
         ]
         self.logger.info(f"Checking out {commit}")
-        processwrapper.check_output(cmd, cwd=workdir)
+        processwrapper.check_output(cmd)
+
+    def apply_patch(self, workdir, patch):
+        """Apply a patch to the workdir
+
+        Apply the patch. If something goes wrong,
+
+        """
+        cmd = [
+            'git',
+            '-C', workdir,
+            'apply',
+            patch,
+        ]
+        self.logger.info(f"Applying patch {patch}")
+        try:
+            processwrapper.check_output(cmd)
+        except:
+            cmd = [
+                'git',
+                '-C', workdir,
+                "am",
+                '--abort',
+            ]
+            processwrapper.check_output(cmd)
+            raise
