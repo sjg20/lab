@@ -6,6 +6,7 @@ from labgrid.factory import target_factory
 from labgrid.step import step
 from labgrid.driver.exception import ExecutionError
 from labgrid.util.helper import processwrapper
+from labgrid.var_dict import get_var
 
 @target_factory.reg_driver
 @attr.s(eq=False)
@@ -52,6 +53,10 @@ class UBootProviderDriver(Driver):
             str: Filename of build result, e.g. "u-boot.bin"
         """
         build_path = os.path.join(self.build_base, self.board)
+        commit = get_var('commit')
+
+        print('commit', commit)
+
         cmd = [
             self.tool,
             '-o', build_path,
@@ -59,16 +64,30 @@ class UBootProviderDriver(Driver):
             '--board', self.board,
             '-W',
         ]
+
+        # If we have a commit, use a worktree
+        workdir = None
+        if commit:
+            workdir = self.setup_worktree(commit)
+            #cmd += [
+                #'-g', workdir,
+            #]
         print(f"Building U-Boot for {self.board}")
         self.logger.debug(f"cwd:{os.getcwd()} cmd:{cmd}")
-        processwrapper.check_output(cmd)
+        processwrapper.check_output(cmd, cwd=workdir)
         fname = os.path.join(build_path, self.output)
         return fname
 
-    def setup_worktree(self):
+    def setup_worktree(self, commit):
         """Make sure there is a worktree for the current board
 
         If the worktree directory does not exist, it is created
+
+        Args:
+            commit (str): Commit to check out (hash or branch name)
+
+        Returns:
+            str: work directory for this board
         """
         workdir = os.path.join(self.workdirs, self.board)
         if not os.path.exists(workdir):
@@ -82,6 +101,8 @@ class UBootProviderDriver(Driver):
             ]
             self.logger.info(f"Setting up worktree in {workdir}")
             processwrapper.check_output(cmd, cwd=self.workdirs)
+        self.select_commit(commit)
+        return workdir
 
     def select_commit(self, commit):
         """Select a particular commit in the worktree
@@ -92,9 +113,8 @@ class UBootProviderDriver(Driver):
         workdir = os.path.join(self.workdirs, self.board)
         cmd = [
             'git',
-            '--git-dir', workdir,
             'checkout',
             commit,
         ]
         self.logger.info(f"Checking out {commit}")
-        processwrapper.check_output(cmd, cwd=self.workdirs)
+        processwrapper.check_output(cmd, cwd=workdir)
