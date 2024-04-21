@@ -29,6 +29,14 @@ Run the client
 LG_CROSSBAR=ws://kea:20408/ws labgrid-client -p rpi3 acquire
 LG_CROSSBAR=ws://kea:20408/ws labgrid-client -c cfg/env_kea.cfg -s uboot console
 
+Building
+--------
+
+cd ~/u
+LG_CROSSBAR=ws://kea:20408/ws labgrid-client \
+	-c /vid/software/devel/ubtest/lab/env_rpi_try.cfg \
+	-V do-bootstrap 1 -V do-build 1 -p rpi3 -s uboot console
+
 
 Things you may need to do
 -------------------------
@@ -39,7 +47,6 @@ Do this on kea:
 
 sudo systemctl unmask udisks2
 
-
 2. labgrid.driver.exception.ExecutionError: ('mkdir -p /var/cache/labgrid/sglass/dcaa3d5dbb98bfde8813eab6cc9051d6ffed0b4a59e28a01bb62b257c0fffd1a/', [], ['mkdir: cannot create directory ‘/var/cache/labgrid’: Permission denied'])
 
 Create /var/cache/labgrid on kea, as per getting started
@@ -47,4 +54,8 @@ Create /var/cache/labgrid on kea, as per getting started
 3. GDBus.Error:org.freedesktop.UDisks2.Error.NotAuthorizedCanObtain: Not authorized to perform operation
 
 https://superuser.com/questions/1192269/mounting-partitions-without-a-password-using-udisks2/1192349#1192349
+
+4.
+sudo usermod --append --groups disk sglass
+
 

@@ -37,10 +37,10 @@ opi_pc:
     ## sdwire2
     ## hubc-port8
     match:
-      'ID_SERIAL_SHORT': '202001064001'
+      'ID_SERIAL_SHORT': '202001064004'
 
   NetworkPowerPort:
     ## dli_main_port1
     model: digitalloggers_http
-    host: http://admin:pass@192.168.4.19
+    host: http://admin:1234@192.168.4.19
     index: 1
