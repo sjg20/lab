@@ -10,3 +10,11 @@ places:
   opi_pc:
     matches:
       - kea/opi_pc/*
+
+  rock2:
+    matches:
+      - kea/rock2/*
+
+  pcduino3:
+    matches:
+      - kea/pcduino3/*

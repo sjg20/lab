@@ -9,19 +9,20 @@ rpi3:
   location: 'lab'
   USBSerialPort:
     ## ttyusb-port1
-    ## hubc-port4
+    ## hub c4
     ## sdwire0
     match:
       '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.4:1.0'
 
   USBSDWireDevice:
     ## sdwire0
-    ## hubc-port9
+    ## hub c9
     match:
       ## '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.4.1.2' ??
       'ID_SERIAL_SHORT': 'sdwire-18'
 
   YKUSHPowerPort:
+    ## ykush 0 1
     serial: 'YK17698'
     index: 1
 
@@ -29,13 +30,13 @@ opi_pc:
   location: 'lab'
   USBSerialPort:
     ## ttyusb_port4
-    ## hubc-port7
+    ## hub c7
     match:
       '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.3.3:1.0'
 
   USBSDWireDevice:
     ## sdwire2
-    ## hubc-port8
+    ## hub c8
     match:
       'ID_SERIAL_SHORT': '202001064004'
 
@@ -44,3 +45,41 @@ opi_pc:
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.19
     index: 1
+
+rock2:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port8
+    ## hub c3
+    match:
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.3:1.0'
+
+  USBSDWireDevice:
+    ## sdwire5
+    ## hub c13
+    match:
+      'ID_SERIAL_SHORT': 'sdwireda10'
+
+  YKUSHPowerPort:
+    ## ykush 0 3
+    serial: 'YK17698'
+    index: 3
+
+pcduino3:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port2
+    ## hub c5
+    match:
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.3.1:1.0'
+
+  USBSDWireDevice:
+    ## sdwire1
+    ## hub
+    match:
+      'ID_SERIAL_SHORT': 'sdwire-7'
+
+  YKUSHPowerPort:
+    ## ykush 0 2
+    serial: 'YK17698'
+    index: 2
