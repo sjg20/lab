@@ -46,6 +46,7 @@ opi_pc:
     host: http://admin:1234@192.168.4.19
     index: 1
 
+## Hangs at: Returning to boot ROM...
 rock2:
   location: 'lab'
   USBSerialPort:
@@ -65,10 +66,13 @@ rock2:
     serial: 'YK17698'
     index: 3
 
+## boots but ignores uSD card
+## need to try sending
 pcduino3:
   location: 'lab'
   USBSerialPort:
     ## ttyusb_port2
+    ## 1-5.3.1
     ## hub c5
     match:
       '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.3.1:1.0'
@@ -83,3 +87,21 @@ pcduino3:
     ## ykush 0 2
     serial: 'YK17698'
     index: 2
+
+  SunxiUSBLoader:
+    ## ykush 0 2
+    ## hub c14
+    ## 1-5.1.2.2
+    match:
+      'ID_PATH': 'pci-0000:03:00.2-usb-0:5.1.2.2'
+
+  HIDRelay:
+    index: 4
+    usbrelay: True
+    ##serial: 6QMBS
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+
+  ## RecoveryControl:
+  ## usbrelay 0 4
+  ##  serial:
