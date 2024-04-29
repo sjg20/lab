@@ -18,3 +18,11 @@ places:
   pcduino3:
     matches:
       - kea/pcduino3/*
+
+  pcduino3_nano:
+    matches:
+      - kea/pcduino3_nano/*
+
+  samus:
+    matches:
+      - kea/samus/*
