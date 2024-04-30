@@ -129,8 +129,13 @@ samus:
   location: lab
 
   Servo:
+    servo_name: samus
     serial: 686203-00047
     port: 9900
+    board: samus
+
+  ServoSerialPort:
+    servo_name: samus
 
   NetworkPowerPort:
     ## dli_second_port3
@@ -141,3 +146,6 @@ samus:
   SFEmulator:
     serial: DP025143
     chip: W25Q64CV
+
+qemu:
+  location: local
