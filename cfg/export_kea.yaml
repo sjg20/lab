@@ -137,6 +137,9 @@ samus:
   ServoSerialPort:
     servo_name: samus
 
+  ServoReset:
+    servo_name: samus
+
   NetworkPowerPort:
     ## dli_second_port3
     model: digitalloggers_http
