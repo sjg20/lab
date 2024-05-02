@@ -150,5 +150,34 @@ samus:
     serial: DP025143
     chip: W25Q64CV
 
+## Downloads but no serial output
+nyan-big:
+  location: lab
+
+  Servo:
+    servo_name: nyan-big
+    serial: 911416-00900
+    port: 9901
+    board: nyan-big
+
+  ServoSerialPort:
+    servo_name: nyan-big
+
+  ServoReset:
+    servo_name: nyan-big
+
+  ServoRecovery:
+    servo_name: nyan-big
+
+  SFEmulator:
+    serial: DP138817
+    chip: W25Q32DW
+
+  TegraUSBLoader:
+    ## hub e9
+    ## 1-5.1.2.2
+    match:
+      'ID_PATH': 'pci-0000:03:00.2-usb-0:3.4.1'
+
 qemu:
   location: local

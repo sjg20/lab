@@ -27,6 +27,10 @@ places:
     matches:
       - kea/samus/*
 
+  nyan-big:
+    matches:
+      - kea/nyan-big/*
+
   qemu:
     matches:
       - kea/qemu/*
