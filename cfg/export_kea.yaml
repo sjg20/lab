@@ -179,5 +179,27 @@ nyan-big:
     match:
       'ID_PATH': 'pci-0000:03:00.2-usb-0:3.4.1'
 
-qemu:
-  location: local
+link:
+  location: lab
+
+  Servo:
+    servo_name: link
+    serial: 905537-00223
+    port: 9902
+    board: link
+
+  ServoSerialPort:
+    servo_name: link
+
+  ServoReset:
+    servo_name: link
+
+  NetworkPowerPort:
+    ## dli_second_port3
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.22
+    index: 3
+
+  SFEmulator:
+    serial: DP022781
+    chip: W25Q64FV

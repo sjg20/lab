@@ -34,3 +34,7 @@ places:
   qemu:
     matches:
       - kea/qemu/*
+
+  link:
+    matches:
+      - kea/link/*
