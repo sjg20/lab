@@ -97,6 +97,7 @@ pcduino3:
   HIDRelay:
     ## recovery
     ## usbrelay 0 4
+    ## hub a 14
     index: 4
     usbrelay: True
     ##serial: 6QMBS
@@ -477,3 +478,53 @@ bpi:
     ## ykush 1 2
     serial: 'YK18511'
     index: 2
+
+# critical medium error on disk
+rpi2:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port (new to labgrid)
+    ## hub c6
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:5.3.3:1.0
+
+  USBSDWireDevice:
+    ## sdwire12
+    ## hub
+    match:
+      'ID_SERIAL_SHORT': sdwireda5
+
+  YKUSHPowerPort:
+    ## ykush 1 3
+    serial: 'YK18511'
+    index: 3
+
+edison:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port17
+    ## hub
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:5.3.3:1.0
+
+  NetworkPowerPort:
+    ## dli_second_port5
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.22
+    index: 5
+
+  HIDRelay:
+    ## recovery
+    ## usbrelay 2 5
+    ## hub a 10
+    ## serial: 7QMBS
+    index: 5
+    usbrelay: True
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.2'
+
+  ##IntelUSBLoader:
+    ## ykush2_port1
+    ## hube_10
+    ##match:
+      ##'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.3:1.0'  ## check this

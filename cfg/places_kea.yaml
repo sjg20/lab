@@ -78,3 +78,11 @@ places:
   bpi:
     matches:
       - kea/bpi/*
+
+  rpi2:
+    matches:
+      - kea/rpi2/*
+
+  edison:
+    matches:
+      - kea/edison/*
