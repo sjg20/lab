@@ -70,3 +70,11 @@ places:
   olimex-a20:
     matches:
       - kea/olimex-a20/*
+
+  opi_pc2:
+    matches:
+      - kea/opi_pc2/*
+
+  bpi:
+    matches:
+      - kea/bpi/*
