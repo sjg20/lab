@@ -145,7 +145,7 @@ samus:
   NetworkPowerPort:
     ## dli_second_port3
     model: digitalloggers_http
-    host: http://admin:1234@192.168.22
+    host: http://admin:1234@192.168.4.22
     index: 3
 
   SFEmulator:
@@ -479,7 +479,7 @@ bpi:
     serial: 'YK18511'
     index: 2
 
-# critical medium error on disk
+## critical medium error on disk
 rpi2:
   location: 'lab'
   USBSerialPort:
@@ -499,18 +499,23 @@ rpi2:
     serial: 'YK18511'
     index: 3
 
+## No serial
+## Same problem as zynq_zybo as the serial only appears when board is powered
 edison:
   location: 'lab'
   USBSerialPort:
     ## ttyusb_port17
     ## hub
     match:
-      ID_PATH: pci-0000:03:00.2-usb-0:5.3.3:1.0
+      ##ID_PATH: pci-0000:03:00.2-usb-0:5.3.3:1.0
+      ID_PATH: pci-0000:00:14.0-usb-0:10.1.4:1.0
+      ##ID_SERIAL_SHORT: A903JP72
+      ##ID_USB_INTERFACE_NUM: '00'
 
   NetworkPowerPort:
     ## dli_second_port5
     model: digitalloggers_http
-    host: http://admin:1234@192.168.22
+    host: http://admin:1234@192.168.4.22
     index: 5
 
   HIDRelay:
