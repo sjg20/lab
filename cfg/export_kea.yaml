@@ -588,3 +588,31 @@ lcdk:
   ## RecoveryControl:
   ## usbrelay 0 4
   ##  serial:
+
+## not in lab
+ff3399:
+  location: 'lab'
+
+  USBSerialPort:
+    speed: 1500000
+    ## ttyusb_port19
+    ## hub e5
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:3.3.1:1.0
+
+  USBSDWireDevice:
+    ## sdwire14
+    ## hub e6
+    match:
+      'ID_SERIAL_SHORT': 'sdwireda7'
+
+  HIDRelay:
+    ## recovery
+    ## usbrelay 2 1
+    ## hub a 10
+    ## serial: 7QMBS
+    index: 1
+    usbrelay: True
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.2'
+
