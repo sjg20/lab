@@ -66,3 +66,7 @@ places:
   xu3:
     matches:
       - kea/xu3/*
+
+  olimex-a20:
+    matches:
+      - kea/olimex-a20/*
