@@ -86,3 +86,7 @@ places:
   edison:
     matches:
       - kea/edison/*
+
+  bob:
+    matches:
+      - kea/bob/*

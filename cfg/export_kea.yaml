@@ -533,3 +533,23 @@ edison:
     ## hube_10
     ##match:
       ##'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.3:1.0'  ## check this
+
+## Does not even power on
+bob:
+  location: lab
+
+  Servo:
+    servo_name: bob
+    serial: 911416-00262
+    port: 9904
+    board: bob
+
+  ServoSerialPort:
+    servo_name: bob
+
+  ServoReset:
+    servo_name: bob
+
+  SFEmulator:
+    serial: DP139156
+    chip: GD25LQ32
