@@ -553,3 +553,38 @@ bob:
   SFEmulator:
     serial: DP139156
     chip: GD25LQ32
+
+## No response on serial
+lcdk:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port18
+    ## hub e4
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:3.2.4:1.0
+
+  USBSDWireDevice:
+    ## sdwire13
+    ## hub e3
+    match:
+      'ID_SERIAL_SHORT': 'sdwireda6'
+
+  NetworkPowerPort:
+    ## dli_second_port6
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.22
+    index: 6
+
+  HIDRelay:
+    ## reset
+    ## usbrelay 2 8
+    ## hub a 10
+    ## serial: 7QMBS
+    index: 8
+    usbrelay: True
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.2'
+
+  ## RecoveryControl:
+  ## usbrelay 0 4
+  ##  serial:

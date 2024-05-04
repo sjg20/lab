@@ -90,3 +90,7 @@ places:
   bob:
     matches:
       - kea/bob/*
+
+  lcdk:
+    matches:
+      - kea/lcdk/*
