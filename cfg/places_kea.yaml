@@ -38,3 +38,23 @@ places:
   link:
     matches:
       - kea/link/*
+
+  jerry:
+    matches:
+      - kea/jerry/*
+
+  minnowmax:
+    matches:
+      - kea/minnowmax/*
+
+  zynq_zybo:
+    matches:
+      - kea/zynq_zybo/*
+
+  tk1:
+    matches:
+      - kea/tk1/*
+
+  puma:
+    matches:
+      - kea/puma/*

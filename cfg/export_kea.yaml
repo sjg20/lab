@@ -10,7 +10,6 @@ rpi3:
   USBSerialPort:
     ## ttyusb-port1
     ## hub c4
-    ## sdwire0
     match:
       '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.4:1.0'
 
@@ -96,6 +95,7 @@ pcduino3:
       'ID_PATH': 'pci-0000:03:00.2-usb-0:5.1.2.2'
 
   HIDRelay:
+    ## usbrelay 0 4
     index: 4
     usbrelay: True
     ##serial: 6QMBS
@@ -194,12 +194,175 @@ link:
   ServoReset:
     servo_name: link
 
-  NetworkPowerPort:
-    ## dli_second_port3
-    model: digitalloggers_http
-    host: http://admin:1234@192.168.22
-    index: 3
-
   SFEmulator:
     serial: DP022781
     chip: W25Q64FV
+
+jerry:
+  location: lab
+
+  Servo:
+    servo_name: jerry
+    serial: 730422-00045
+    port: 9903
+    board: jerry
+
+  ServoSerialPort:
+    servo_name: jerry
+
+  ServoReset:
+    servo_name: jerry
+
+  SFEmulator:
+    serial: DP022783
+    chip: GD25LQ32
+
+minnowmax:
+  location: lab
+
+  USBSerialPort:
+    ## ttyusb_port7
+    ## hub b3
+    match:
+      '@ID_PATH': 'pci-0000:04:00.0-usb-0:2.2.3:1.0'
+
+  NetworkPowerPort:
+    ## dli_main_port6
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.19
+    index: 6
+
+  SFEmulator:
+    serial: DP139140
+    chip: W25Q64DW
+
+zynq_zybo:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port5
+    ## hub c1
+    match:
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.1:1.0'
+      ##ID_SERIAL_SHORT: 210279653540
+      ##ID_USB_INTERFACE_NUM: 01
+
+  USBSDWireDevice:
+    ## sdwire3
+    ## hub
+    match:
+      'ID_SERIAL_SHORT': '202001064001'
+
+  NetworkPowerPort:
+    ## dli_main_port1
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.19
+    index: 5
+
+  HIDRelay:
+    ## usbrelay 0 6
+    ##serial: 6QMBS
+    index: 6
+    usbrelay: True
+    match:
+      '@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+
+tk1:
+  location: 'lab'
+  NetworkSerialPort:
+    ## portserver 1 1
+    ## base port 2000, 16 ports
+    host: 192.168.4.23
+    port: 2001
+    speed: 115200
+
+  ##HIDRelay:
+    ## power button
+    ## usbrelay 0 1
+    ##serial: 6QMBS
+    ##index: 1
+    ##usbrelay: True
+    ##match:
+      ##'@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+
+  HIDRelay:
+    ## reset
+    ## usbrelay 0 2
+    ##serial: 6QMBS
+    index: 2
+    usbrelay: True
+    match:
+      '@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+
+  HIDRelay:
+    ## recovery
+    ## usbrelay 0 3
+    ##serial: 6QMBS
+    index: 3
+    usbrelay: True
+    match:
+      '@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+
+  TegraUSBLoader:
+    ## hub a 13
+    match:
+      ID_PATH: pci-0000:00:14.0-usb-0:10.1.1
+
+puma:
+  location: 'lab'
+
+  USBSerialPort:
+    ## ttyusb_port6
+    ## hub c2
+    match:
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.2:1.0'
+
+  USBSDWireDevice:
+    ## sdwire4
+    ## hub b9
+    match:
+      'ID_SERIAL_SHORT': '202001064005'
+
+  NetworkPowerPort:
+    ## dli_main_port2
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.19
+    index: 2
+
+  HIDRelay:
+    ## usbrelay 0 6=7
+    ##serial: 6QMBS
+    index: 7
+    usbrelay: True
+    match:
+      '@ID_PATH': pci-0000:03:00.2-usb-0:5.2.2:1.0
+
+salmon:
+  location: 'lab'
+
+  NetworkSerialPort:
+    ## portserver 1 2
+    ## base port 2000, 16 ports
+    host: 192.168.4.23
+    port: 2002
+    speed: 115200
+
+  HIDRelay:
+    ## reset
+    ## usbrelay 1 2
+    ##serial: 6AAMZ (hub d2)
+    index: 2
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:4.2.3
+
+  HIDRelay:
+    ## recovery
+    ## usbrelay 1 1
+    ##serial: 6AAMZ (hub d2)
+    index: 1
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:4.2.3
+
+  IMXUSBLoader:
+    ## hub d 3
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:4.2.2
