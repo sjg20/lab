@@ -616,3 +616,32 @@ ff3399:
     match:
       'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.2'
 
+## stuck at "Start Snapper 9260 Bootstrap..." - needs USB boot
+sn9260:
+  location: 'lab'
+  NetworkSerialPort:
+    ## portserver 1 3
+    ## base port 2000, 16 ports
+    host: 192.168.4.23
+    port: 2003
+    speed: 115200
+
+  HIDRelay:
+    ## reset
+    ## usbrelay 2 2
+    ## hub a 10
+    ## serial: 7QMBS
+    index: 2
+    usbrelay: True
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.2'
+
+  HIDRelay:
+    ## recovery
+    ## usbrelay 2 3
+    ## hub a 10
+    ## serial: 7QMBS
+    index: 3
+    usbrelay: True
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.4.2'

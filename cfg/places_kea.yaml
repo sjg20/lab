@@ -98,3 +98,7 @@ places:
   ff3399:
     matches:
       - kea/ff3399/*
+
+  sn9260:
+    matches:
+      - kea/sn9260/*
