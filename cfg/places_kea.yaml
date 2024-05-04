@@ -58,3 +58,11 @@ places:
   puma:
     matches:
       - kea/puma/*
+
+  salmon:
+    matches:
+      - kea/salmon/*
+
+  xu3:
+    matches:
+      - kea/xu3/*
