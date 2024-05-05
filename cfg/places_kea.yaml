@@ -102,3 +102,7 @@ places:
   sn9260:
     matches:
       - kea/sn9260/*
+
+  coral:
+    matches:
+      - kea/coral/*
