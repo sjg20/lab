@@ -114,3 +114,7 @@ places:
   bbb:
     matches:
       - kea/bbb/*
+
+  snow:
+    matches:
+      - kea/snow/*

@@ -690,7 +690,7 @@ rpi3z:
     serial: 'YK19193'
     index: 2
 
-# No serial output
+## No serial output
 bbb:
   location: 'lab'
   USBSerialPort:
@@ -718,3 +718,32 @@ bbb:
     index: 6
     match:
       ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
+
+snow:
+  location: lab
+
+  Servo:
+    servo_name: snow
+    serial: 911416-00558
+    port: 9906
+    board: daisy
+
+  NetworkPowerPort:
+    ## dli_second_port7
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.22
+    index: 7
+
+  ServoSerialPort:
+    servo_name: snow
+
+  ServoReset:
+    servo_name: snow
+
+  ServoRecovery:
+    servo_name: snow
+
+  SamsungUSBLoader:
+    ## hub d4
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:4.2.4
