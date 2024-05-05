@@ -747,3 +747,32 @@ snow:
     ## hub d4
     match:
       ID_PATH: pci-0000:03:00.2-usb-0:4.2.4
+
+kevin:
+  location: lab
+
+  ## Port d1
+  Servo:
+    servo_name: kevin
+    serial: 911416-00627
+    port: 9907
+    board: kevin
+
+  NetworkPowerPort:
+    ## dli_fourth_port1
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.27
+    index: 1
+
+  ServoSerialPort:
+    servo_name: kevin
+
+  ServoReset:
+    servo_name: kevin
+
+  ServoRecovery:
+    servo_name: kevin
+
+  SFEmulator:
+    serial: DP137244
+    chip: gd25lq64
