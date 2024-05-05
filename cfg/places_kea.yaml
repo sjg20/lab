@@ -110,3 +110,7 @@ places:
   rpi3z:
     matches:
       - kea/rpi3z/*
+
+  bbb:
+    matches:
+      - kea/bbb/*

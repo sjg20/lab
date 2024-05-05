@@ -689,3 +689,32 @@ rpi3z:
     ## ykush 2 2
     serial: 'YK19193'
     index: 2
+
+# No serial output
+bbb:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port21
+    ## hub f2
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:2.1.2:1.0
+
+  USBSDWireDevice:
+    ## sdwire16
+    ## hub f3
+    match:
+      'ID_SERIAL_SHORT': 'da62'
+
+  NetworkPowerPort:
+    ## dli_second_port4
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.22
+    index: 4
+
+  HIDRelay:
+    ## reset
+    ## usbrelay 3 6
+    ##serial: 8QMBS (hub e11)
+    index: 6
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
