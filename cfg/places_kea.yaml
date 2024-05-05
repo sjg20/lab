@@ -106,3 +106,7 @@ places:
   coral:
     matches:
       - kea/coral/*
+
+  rpi3z:
+    matches:
+      - kea/rpi3z/*
