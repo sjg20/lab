@@ -122,3 +122,7 @@ places:
   kevin:
     matches:
       - kea/kevin/*
+
+  pine64:
+    matches:
+      - kea/pine64/*
