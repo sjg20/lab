@@ -126,3 +126,7 @@ places:
   pine64:
     matches:
       - kea/pine64/*
+
+  c4:
+    matches:
+      - kea/c4/*

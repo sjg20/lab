@@ -12,6 +12,7 @@ Run the exporter
 
 ssh kea
 cd /vid/software/devel/ubtest/lab/run
+sudo ls
 LG_CROSSBAR=ws://kea:20408/ws labgrid-exporter ../cfg/export_kea.yaml
 
 
