@@ -134,3 +134,7 @@ places:
   rpi4:
     matches:
       - kea/rpi4/*
+
+  rpi0:
+    matches:
+      - kea/rpi0/*
