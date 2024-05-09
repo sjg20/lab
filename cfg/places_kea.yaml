@@ -130,3 +130,7 @@ places:
   c4:
     matches:
       - kea/c4/*
+
+  rpi4:
+    matches:
+      - kea/rpi4/*

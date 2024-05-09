@@ -830,3 +830,31 @@ c4:
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.27
     index: 5
+
+rpi4:
+  location: 'lab'
+  USBSerialPort:
+    ## ttyusb_port24
+    ## hub f9
+    match:
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:2.3.1:1.0'
+
+  USBSDWireDevice:
+    ## sdwire19
+    ## hub f10
+    match:
+      'ID_SERIAL_SHORT': 'sdwireda9'
+
+  NetworkPowerPort:
+    ## dli_fourth_port6
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.27
+    index: 6
+
+  HIDRelay:
+    ## reset
+    ## usbrelay 3 5
+    ##serial: 8QMBS (hub e11)
+    index: 5
+    match:
+      ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
