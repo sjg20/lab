@@ -411,13 +411,13 @@ olimex-a20:
     host: http://admin:1234@192.168.4.19
     index: 4
 
-  HIDRelay:
+  ## HIDRelay:
     ## reset
     ## usbrelay 3 7
     ##serial: 8QMBS (hub e11)
-    index: 7
-    match:
-      ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
+    ## index: 7
+    ## match:
+      ## ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
 
   HIDRelay:
     ## recovery
@@ -486,7 +486,7 @@ rpi2:
     ## ttyusb_port (new to labgrid)
     ## hub c6
     match:
-      ID_PATH: pci-0000:03:00.2-usb-0:5.3.3:1.0
+      ID_PATH: pci-0000:03:00.2-usb-0:5.3.2:1.0
 
   USBSDWireDevice:
     ## sdwire12
