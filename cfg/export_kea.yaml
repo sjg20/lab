@@ -83,12 +83,12 @@ pcduino3:
       'ID_SERIAL_SHORT': 'sdwire-7'
 
   YKUSHPowerPort:
-    ## ykush 0 2
+    ## ykush 0 2 (hub c14)
     serial: 'YK17698'
     index: 2
 
   SunxiUSBLoader:
-    ## ykush 0 2
+    ## ykush 0 2(hub c14)
     ## hub c14
     ## 1-5.1.2.2
     match:
