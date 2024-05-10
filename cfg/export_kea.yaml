@@ -78,7 +78,7 @@ pcduino3:
 
   USBSDWireDevice:
     ## sdwire1
-    ## hub
+    ## hub c10
     match:
       'ID_SERIAL_SHORT': 'sdwire-7'
 
