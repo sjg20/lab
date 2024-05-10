@@ -58,5 +58,45 @@ https://superuser.com/questions/1192269/mounting-partitions-without-a-password-u
 
 4.
 sudo usermod --append --groups disk sglass
+rock2
 
+Lab status 10mar24
+==================
 
+board                notes
+-------------------------
+rpi3                 OK
+opi_pc               OK
+rock2                hangs in SPL
+pcduino3             OK, send only
+pcduino3_nano        OK
+samus                OK
+nyan-big             OK, send only
+link                 OK
+jerry                hangs
+minnowmax            OK
+zynq_zybo            console broken
+tk1                  send only, cannot enter recovery
+puma                 no serial output, doesn't work with SD-wire
+salmon               no build, doesn't boot
+xu3                  ignores SD-wire image
+olimex-a20           no console output
+opi_pc2              hangs in SPL
+bpi                  OK
+rpi2                 OK
+edison               console broken
+bob                  OK
+lcdk                 no output
+ff3399               board missing
+sn9260               no build, doesn't boot
+coral                broken
+rpi3z                OK
+bbb                  no power?
+snow                 OK, send only
+kevin                OK
+pine64               no console output
+c4                   no boot
+rpi4                 OK
+rpi0                 OK
+
+14 OK (inc. 3 send only),17 broken
