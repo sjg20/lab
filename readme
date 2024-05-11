@@ -87,7 +87,7 @@ rpi2                 OK
 edison               console broken
 bob                  OK
 lcdk                 no output
-ff3399               board missing
+ff3399               OK
 sn9260               no build, doesn't boot
 coral                broken
 rpi3z                OK
@@ -99,4 +99,4 @@ c4                   no boot
 rpi4                 OK
 rpi0                 OK
 
-14 OK (inc. 3 send only),17 broken
+15 OK (inc. 3 send only), 16 broken, total 34

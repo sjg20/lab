@@ -589,7 +589,6 @@ lcdk:
   ## usbrelay 0 4
   ##  serial:
 
-## not in lab
 ff3399:
   location: 'lab'
 
@@ -604,7 +603,8 @@ ff3399:
     ## sdwire14
     ## hub e6
     match:
-      'ID_SERIAL_SHORT': 'sdwireda7'
+      ##'ID_SERIAL_SHORT': 'sdwireda7'
+      'ID_SERIAL_SHORT': 'da68'
 
   HIDRelay:
     ## recovery
