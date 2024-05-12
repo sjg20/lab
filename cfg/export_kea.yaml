@@ -668,6 +668,7 @@ coral:
     servo_name: coral
 
   SFEmulator:
+    ## try DP034599
     serial: DP033694
     chip: w25q128fw
 

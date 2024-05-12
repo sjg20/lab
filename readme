@@ -89,7 +89,7 @@ bob                  OK
 lcdk                 no output
 ff3399               OK
 sn9260               no build, doesn't boot
-coral                broken
+coral                OK
 rpi3z                OK
 bbb                  no power?
 snow                 OK, send only
@@ -99,4 +99,4 @@ c4                   no boot
 rpi4                 OK
 rpi0                 OK
 
-16 OK (inc. 3 send only), 15 broken, total 34
+17 OK (inc. 3 send only), 14 broken, total 34
