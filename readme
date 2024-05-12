@@ -73,7 +73,7 @@ pcduino3_nano        OK
 samus                OK
 nyan-big             OK, send only
 link                 OK
-jerry                hangs
+jerry                OK
 minnowmax            OK
 zynq_zybo            console broken (labgrid issue 1387)
 tk1                  send only, cannot enter recovery (labgrid issue 1390)
@@ -99,4 +99,4 @@ c4                   no boot
 rpi4                 OK
 rpi0                 OK
 
-18 OK (inc. 3 send only), 13 broken, total 34
+19 OK (inc. 3 send only), 12 broken (inc. 3 labgrid issues), total 34
