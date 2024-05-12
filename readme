@@ -75,8 +75,8 @@ nyan-big             OK, send only
 link                 OK
 jerry                hangs
 minnowmax            OK
-zynq_zybo            console broken
-tk1                  send only, cannot enter recovery
+zynq_zybo            console broken (labgrid issue 1387)
+tk1                  send only, cannot enter recovery (labgrid issue 1390)
 puma                 no serial output, doesn't work with SD-wire
 salmon               no build, doesn't boot
 xu3                  ignores SD-wire image
@@ -84,7 +84,7 @@ olimex-a20           no console output
 opi_pc2              OK
 bpi                  OK
 rpi2                 OK
-edison               console broken
+edison               console broken (labgrid issue 1387)
 bob                  OK
 lcdk                 no output
 ff3399               OK
@@ -94,9 +94,9 @@ rpi3z                OK
 bbb                  no power?
 snow                 OK, send only
 kevin                OK
-pine64               no console output
+pine64               OK
 c4                   no boot
 rpi4                 OK
 rpi0                 OK
 
-17 OK (inc. 3 send only), 14 broken, total 34
+18 OK (inc. 3 send only), 13 broken, total 34
