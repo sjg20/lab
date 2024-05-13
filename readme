@@ -60,7 +60,7 @@ https://superuser.com/questions/1192269/mounting-partitions-without-a-password-u
 sudo usermod --append --groups disk sglass
 rock2
 
-Lab status 10mar24
+Lab status 13may23
 ==================
 
 board                notes
