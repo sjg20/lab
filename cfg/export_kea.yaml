@@ -255,7 +255,7 @@ zynq_zybo:
       'ID_SERIAL_SHORT': '202001064001'
 
   NetworkPowerPort:
-    ## dli_main_port1
+    ## dli_main_port5
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.19
     index: 5
