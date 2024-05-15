@@ -826,10 +826,10 @@ c4:
       'ID_SERIAL_SHORT': 'da64'
 
   NetworkPowerPort:
-    ## dli_fourth_port5
+    ## dli_main_port7
     model: digitalloggers_http
-    host: http://admin:1234@192.168.4.27
-    index: 5
+    host: http://admin:1234@192.168.4.19
+    index: 7
 
 rpi4:
   location: 'lab'
