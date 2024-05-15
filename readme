@@ -95,8 +95,8 @@ bbb                  OK
 snow                 OK, send only
 kevin                OK
 pine64               OK
-c4                   no boot
+c4                   OK
 rpi4                 OK
 rpi0                 OK
 
-20 OK (inc. 3 send only), 11 broken (inc. 3 labgrid issues), total 34
+21 OK (inc. 3 send only), 10 broken (inc. 3 labgrid issues), total 34
