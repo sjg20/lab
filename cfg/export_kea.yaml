@@ -691,7 +691,6 @@ rpi3z:
     serial: 'YK19193'
     index: 2
 
-## No serial output
 bbb:
   location: 'lab'
   USBSerialPort:

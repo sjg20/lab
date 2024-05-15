@@ -91,7 +91,7 @@ ff3399               OK
 sn9260               no build, doesn't boot
 coral                OK
 rpi3z                OK
-bbb                  no power?
+bbb                  OK
 snow                 OK, send only
 kevin                OK
 pine64               OK
@@ -99,4 +99,4 @@ c4                   no boot
 rpi4                 OK
 rpi0                 OK
 
-19 OK (inc. 3 send only), 12 broken (inc. 3 labgrid issues), total 34
+20 OK (inc. 3 send only), 11 broken (inc. 3 labgrid issues), total 34
