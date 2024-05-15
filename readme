@@ -79,7 +79,7 @@ zynq_zybo            console broken (labgrid issue 1387)
 tk1                  send only, cannot enter recovery (labgrid issue 1390)
 puma                 no serial output, doesn't work with SD-wire
 salmon               no build, doesn't boot
-xu3                  ignores SD-wire image
+xu3                  fails to boot from SD card
 olimex-a20           no console output
 opi_pc2              OK
 bpi                  OK
