@@ -54,11 +54,18 @@ Create /var/cache/labgrid on kea, as per getting started
 
 3. GDBus.Error:org.freedesktop.UDisks2.Error.NotAuthorizedCanObtain: Not authorized to perform operation
 
+https://github.com/coldfix/udiskie/wiki/Permissions
+
 https://superuser.com/questions/1192269/mounting-partitions-without-a-password-using-udisks2/1192349#1192349
 
 4.
 sudo usermod --append --groups disk sglass
 rock2
+
+5. usbfs: interface 0 claimed by ch341 while 'brltty' sets config #1
+
+apt remove brltty
+
 
 Lab status 13may23
 ==================
