@@ -917,11 +917,11 @@ play:
     match:
       ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
 
-  HIDRelay:
+  ##HIDRelay:
     ## recovery (USR1)
     ## usbrelay 2 7
     ## hub a 10
     ## serial: 7QMBS
-    index: 7
-    match:
-      ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
+    ##index: 7
+    ##match:
+      ##ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
