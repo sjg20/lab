@@ -138,3 +138,7 @@ places:
   rpi0:
     matches:
       - kea/rpi0/*
+
+  play:
+    matches:
+      - kea/play/*

@@ -32,10 +32,39 @@ LG_CROSSBAR=ws://kea:20408/ws labgrid-client -c cfg/env_kea.cfg -s uboot console
 Building
 --------
 
+branch: try
+PR: https://github.com/labgrid-project/labgrid/pull/1411
+
 cd ~/u
 LG_CROSSBAR=ws://kea:20408/ws labgrid-client \
 	-c /vid/software/devel/ubtest/lab/env_rpi_try.cfg \
 	-V do-bootstrap 1 -V do-build 1 -p rpi3 -s uboot console
+
+
+Building for grpc
+-----------------
+
+ellesmere:
+cd /vid/software/devel/ubtest/labgrid
+pip uninstall labngrid && pip install -e ".[dev]" && rm -rf build/ labgrid.egg-info/
+
+ellemere for gitlab
+cd /vid/software/devel/ubtest/labgrid
+sudo su - gitlab-runner
+
+kea
+ssh kea
+cd /vid/software/devel/ubtest/labgrid
+sudo rm -r build/ labgrid.egg-info && pip uninstall labngrid && pip install .
+
+To run on kea:
+
+terminal 1:
+labgrid-coordinator -l kea:20408
+
+terminal 2:
+HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/export_kea.yaml
+
 
 
 Things you may need to do
