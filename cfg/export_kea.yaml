@@ -906,25 +906,27 @@ play:
   USBSDWireDevice:
     ## hub
     match:
-      ID_SERIAL_SHORT: da68
+      ID_SERIAL_SHORT: da69
 
-  HIDRelay:
+  reset:
     ## reset
     ## usbrelay 3 5
     ## hub e 11
     ##serial: 8QMBS (hub e11)
+    cls: HIDRelay
     index: 5
     match:
       ID_PATH: pci-0000:03:00.2-usb-0:3.4.3
 
-  ##HIDRelay:
-    ## recovery (USR1)
-    ## usbrelay 2 7
-    ## hub a 10
-    ## serial: 7QMBS
-    ##index: 7
-    ##match:
-      ##ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
+  recovery:
+    ##recovery (USR1)
+    ##usbrelay 2 7
+    ##hub a 10
+    ##serial: 7QMBS
+    cls: HIDRelay
+    index: 7
+    match:
+      ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
 
 qemu-x86:
   location: 'lab'

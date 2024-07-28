@@ -69,6 +69,9 @@ ssh kea
 cd /vid/software/devel/ubtest/lab/run
 HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/export_kea.yaml
 
+sync places:
+cd /vid/software/devel/ubtest/lab
+LG_COORDINATOR=kea:20408 ../labgrid/contrib/sync-places.py sync cfg/places_kea.yaml
 
 
 Things you may need to do
