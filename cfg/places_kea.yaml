@@ -139,10 +139,10 @@ places:
     matches:
       - kea/rpi0/*
 
-  play:
-    matches:
-      - kea/play/*
-
   qemu-x86:
     matches:
       - kea/qemu-x86/*
+
+  play:
+    matches:
+      - kea/play/*
