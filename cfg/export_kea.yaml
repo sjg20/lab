@@ -925,3 +925,6 @@ play:
     ##index: 7
     ##match:
       ##ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
+
+qemu-x86:
+  location: 'lab'

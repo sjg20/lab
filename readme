@@ -60,9 +60,13 @@ sudo rm -r build/ labgrid.egg-info && pip uninstall labngrid && pip install .
 To run on kea:
 
 terminal 1:
+ssh kea
+cd /vid/software/devel/ubtest/lab/run
 labgrid-coordinator -l kea:20408
 
 terminal 2:
+ssh kea
+cd /vid/software/devel/ubtest/lab/run
 HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/export_kea.yaml
 
 

@@ -142,3 +142,7 @@ places:
   play:
     matches:
       - kea/play/*
+
+  qemu-x86:
+    matches:
+      - kea/qemu-x86/*
