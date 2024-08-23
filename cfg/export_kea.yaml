@@ -924,7 +924,7 @@ play:
     ##hub a 10
     ##serial: 7QMBS
     cls: HIDRelay
-    index: 7
+    index: 6
     match:
       ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
 
