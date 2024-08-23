@@ -1,10 +1,10 @@
 
-Run the crossbar
-----------------
+Run the coordinator
+-------------------
 
 ssh kea
 cd /vid/software/devel/ubtest/lab/run
-crossbar start --config ../cfg/crossbar-kea.yaml
+labgrid-coordinator -l kea:20408
 
 
 Run the exporter
@@ -12,7 +12,7 @@ Run the exporter
 
 ssh kea
 cd /vid/software/devel/ubtest/lab/run
-HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_CROSSBAR=ws://kea:20408/ws labgrid-exporter ../cfg/export_kea.yaml
+HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/export_kea.yaml
 
 
 Sync places
@@ -20,7 +20,7 @@ Sync places
 
 ellesmere:
 cd /vid/software/devel/ubtest/lab
-LG_CROSSBAR=ws://kea:20408/ws ../labgrid/contrib/sync-places.py sync cfg/places_kea.yaml
+LG_COORDINATOR=kea:20408 ../labgrid/contrib/sync-places.py sync cfg/places_kea.yaml
 
 
 Run the client
@@ -31,18 +31,6 @@ LG_CROSSBAR=ws://kea:20408/ws labgrid-client -c cfg/env_kea.cfg -s uboot console
 
 Building
 --------
-
-branch: try
-PR: https://github.com/labgrid-project/labgrid/pull/1411
-
-cd ~/u
-LG_CROSSBAR=ws://kea:20408/ws labgrid-client \
-	-c /vid/software/devel/ubtest/lab/env_rpi_try.cfg \
-	-V do-bootstrap 1 -V do-build 1 -p rpi3 -s uboot console
-
-
-Building for grpc
------------------
 
 ellesmere:
 cd /vid/software/devel/ubtest/labgrid
@@ -56,22 +44,6 @@ kea
 ssh kea
 cd /vid/software/devel/ubtest/labgrid
 sudo rm -r build/ labgrid.egg-info && pip uninstall labngrid && pip install .
-
-To run on kea:
-
-terminal 1:
-ssh kea
-cd /vid/software/devel/ubtest/lab/run
-labgrid-coordinator -l kea:20408
-
-terminal 2:
-ssh kea
-cd /vid/software/devel/ubtest/lab/run
-HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/export_kea.yaml
-
-sync places:
-cd /vid/software/devel/ubtest/lab
-LG_COORDINATOR=kea:20408 ../labgrid/contrib/sync-places.py sync cfg/places_kea.yaml
 
 
 Things you may need to do
