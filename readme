@@ -12,7 +12,7 @@ Run the exporter
 
 ssh kea
 cd /vid/software/devel/ubtest/lab/run
-HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/export_kea.yaml
+HDCTOOLS=/vid/software/devel/ubtest/standalone-hdctools LG_COORDINATOR=kea:20408 labgrid-exporter ../cfg/kea_export.yaml
 
 
 Sync places
@@ -20,7 +20,7 @@ Sync places
 
 ellesmere:
 cd /vid/software/devel/ubtest/lab
-LG_COORDINATOR=kea:20408 ../labgrid/contrib/sync-places.py sync cfg/places_kea.yaml
+LG_COORDINATOR=kea:20408 ../labgrid/contrib/sync-places.py sync cfg/kea_places.yaml
 
 
 Run the client
