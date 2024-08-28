@@ -31,10 +31,6 @@ places:
     matches:
       - kea/nyan-big/*
 
-  qemu:
-    matches:
-      - kea/qemu/*
-
   link:
     matches:
       - kea/link/*
@@ -142,6 +138,14 @@ places:
   qemu-x86:
     matches:
       - kea/qemu-x86/*
+
+  qemu-x86_64:
+    matches:
+      - kea/qemu-x86_64/*
+
+  qemu_arm:
+    matches:
+      - kea/qemu_arm/*
 
   play:
     matches:
