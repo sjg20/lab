@@ -34,16 +34,17 @@ Building
 
 ellesmere:
 cd /vid/software/devel/ubtest/labgrid
-pip uninstall labngrid && pip install -e ".[dev]" && rm -rf build/ labgrid.egg-info/
+pip uninstall labgrid && pip install -e ".[dev]" && rm -rf build/ labgrid.egg-info/
 
 ellemere for gitlab
-cd /vid/software/devel/ubtest/labgrid
 sudo su - gitlab-runner
+cd /vid/software/devel/ubtest/labgrid
+pip install .
 
 kea
 ssh kea
 cd /vid/software/devel/ubtest/labgrid
-sudo rm -r build/ labgrid.egg-info && pip uninstall labngrid && pip install .
+sudo rm -r build/ labgrid.egg-info && pip uninstall labgrid && pip install .
 
 
 Things you may need to do
@@ -82,10 +83,10 @@ board                notes
 rpi3                 OK
 opi_pc               OK
 rock2                hangs in SPL
-pcduino3             OK, send only
+pcduino3             OK
 pcduino3_nano        OK
 samus                OK
-nyan-big             OK, send only
+nyan-big             OK
 link                 OK
 jerry                OK
 minnowmax            OK
@@ -101,12 +102,12 @@ rpi2                 OK
 edison               console broken (labgrid issue 1387)
 bob                  OK, but needs 'powerbtn' on EC console to force board start (broken battery)
 lcdk                 no output
-ff3399               Broken, have ordered another
+ff3399               OK
 sn9260               no build, doesn't boot
 coral                OK
 rpi3z                OK
 bbb                  OK
-snow                 OK, send only
+snow                 OK
 kevin                OK
 pine64               OK
 c4                   OK

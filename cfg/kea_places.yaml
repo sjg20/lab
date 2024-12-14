@@ -150,3 +150,11 @@ places:
   play:
     matches:
       - kea/play/*
+
+  rpi:
+    matches:
+      - kea/rpi/*
+
+  vision5:
+    matches:
+      - kea/vision5/*
