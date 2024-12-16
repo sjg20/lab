@@ -956,16 +956,17 @@ rpi:
     serial: 'YK19193'
     index: 1
 
-vision5:
+vf2:
   location: 'lab'
   USBSerialPort:
     ## ttyusb_port4
-    ## hub g12
+    ## hub c7
     match:
       '@ID_PATH': 'pci-0000:00:14.0-usb-0:9.3.4:1.0'
 
   USBSDWireDevice:
-    ## hub g13
+    ## sdwire2
+    ## hub c8
     match:
       'ID_SERIAL_SHORT': 'da72'
 
@@ -974,3 +975,23 @@ vision5:
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.27
     index: 7
+
+colibrimx8:
+  location: 'lab'
+  NetworkSerialPort:
+    ## portserver 1 5
+    ## base port 2000, 16 ports
+    host: 192.168.4.23
+    port: 2005
+    speed: 115200
+
+  NetworkPowerPort:
+    ## dli_fourth_port8
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.27
+    index: 8
+
+  IMXUSBLoader:
+    ## hub a 13
+    match:
+      ID_PATH: pci-0000:00:14.0-usb-0:9.3.3

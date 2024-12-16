@@ -155,6 +155,10 @@ places:
     matches:
       - kea/rpi/*
 
-  vision5:
+  vf2:
     matches:
-      - kea/vision5/*
+      - kea/vf2/*
+
+  colibrimx8:
+    matches:
+      - kea/colibrimx8/*
