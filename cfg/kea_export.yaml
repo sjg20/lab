@@ -293,35 +293,28 @@ tk1:
     port: 2001
     speed: 115200
 
-  ##HIDRelay:
-    ## power button
-    ## usbrelay 0 1
-    ##serial: 6QMBS
-    ##index: 1
-    ##usbrelay: True
-    ##match:
-      ##'@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
-
-  HIDRelay:
+  reset:
     ## reset
     ## usbrelay 0 2
     ##serial: 6QMBS
+    cls: HIDRelay
     index: 2
     match:
-      '@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+      ID_PATH: 'pci-0000:00:14.0-usb-0:10.1.2'
 
-  HIDRelay:
+  recovery:
     ## recovery
-    ## usbrelay 0 3
+    ## usbrelay 2 7
     ##serial: 6QMBS
-    index: 3
+    cls: HIDRelay
+    index: 7
     match:
-      '@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
+      ID_PATH: 'pci-0000:00:14.0-usb-0:10.4.2'
 
   TegraUSBLoader:
     ## hub a 13
     match:
-      ID_PATH: pci-0000:00:14.0-usb-0:10.1.1
+      ID_PATH: pci-0000:03:00.2-usb-0:3.4.1
 
 puma:
   location: 'lab'
@@ -929,14 +922,14 @@ play:
 
   recovery:
     ##recovery (USR1)
-    ##usbrelay 2 7
+    ##usbrelay 2 6
     ##hub a 10
     ##serial: 7QMBS
     cls: HIDRelay
     index: 6
     match:
       ID_PATH: pci-0000:00:14.0-usb-0:10.4.2
-      
+
 rpi:
   location: 'lab'
   USBSerialPort:
