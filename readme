@@ -47,6 +47,7 @@ cd /vid/software/devel/ubtest/labgrid
 sudo rm -r build/ labgrid.egg-info && pip uninstall labgrid && pip install .
 
 sudo su - labgrid
+cd /vid/software/devel/ubtest/labgrid
 pip uninstall labgrid && pip install .
 
 Things you may need to do
