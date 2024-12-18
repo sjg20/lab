@@ -174,3 +174,7 @@ places:
   rock3a:
     matches:
       - kea/rock3a/*
+
+  rock5b:
+    matches:
+      - kea/rock5b/*
