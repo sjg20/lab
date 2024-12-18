@@ -618,7 +618,7 @@ ff3399:
     ## hub e6
     match:
       ##'ID_SERIAL_SHORT': 'sdwireda7'
-      'ID_SERIAL_SHORT': 'da68'
+      'ID_SERIAL_SHORT': 'da73'
 
   HIDRelay:
     ## recovery
@@ -988,3 +988,62 @@ colibrimx8:
     ## hub a 13
     match:
       ID_PATH: pci-0000:00:14.0-usb-0:9.3.3
+      
+utilite:
+  location: 'lab'
+  USBSerialPort:
+    ## hub g10
+    match:
+      '@ID_PATH': pci-0000:00:14.0-usb-0:9.3.2:1.0
+
+  NetworkPowerPort:
+    ## dli_fourth_port2
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.27
+    index: 4
+
+  USBSDWireDevice:
+    ## sdwire2
+    ## hub g9
+    match:
+      ID_SERIAL_SHORT: da74
+
+rockpro64:
+  location: 'lab'
+  USBSerialPort:
+    ## hub g9
+    speed: 1500000
+    match:
+      '@ID_PATH': pci-0000:00:14.0-usb-0:9.3.1:1.0
+
+  NetworkPowerPort:
+    ## dli_fourth_port4
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.27
+    index: 2
+
+  USBSDWireDevice:
+    ## hub g8
+    match:
+      ID_SERIAL_SHORT: da75
+
+rock3a:
+  location: 'lab'
+  USBSerialPort:
+    ## hub g9
+    speed: 1500000
+    match:
+      '@ID_PATH': pci-0000:00:14.0-usb-0:9.2.3:1.0
+
+  NetworkPowerPort:
+    ## dli_fourth_port5
+    # Allow legacy plaintext login methods
+    # Allow plaintext URL logins
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.37
+    index: 8
+
+  USBSDWireDevice:
+    ## hub g8
+    match:
+      ID_SERIAL_SHORT: da76

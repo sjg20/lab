@@ -162,3 +162,15 @@ places:
   colibrimx8:
     matches:
       - kea/colibrimx8/*
+
+  utilite:
+    matches:
+      - kea/utilite/*
+
+  rockpro64:
+    matches:
+      - kea/rockpro64/*
+
+  rock3a:
+    matches:
+      - kea/rock3a/*
