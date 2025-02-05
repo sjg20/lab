@@ -255,7 +255,7 @@ minnowmax:
     serial: DP139140
     chip: W25Q64DW
 
-zynq_zybo:
+zybo:
   location: 'lab'
   USBSerialPort:
     ## ttyusb_port5
@@ -276,6 +276,13 @@ zynq_zybo:
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.19
     index: 5
+
+  HIDRelay:
+    ## usbrelay 0 6
+    ##serial: 6QMBS
+    index: 6
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
 
 tk1:
   location: 'lab'

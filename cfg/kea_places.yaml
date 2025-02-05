@@ -182,3 +182,7 @@ places:
   rpi5:
     matches:
       - kea/rpi5/*
+
+  zybo:
+    matches:
+      - kea/zybo/*
