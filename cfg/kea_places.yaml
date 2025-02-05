@@ -178,3 +178,7 @@ places:
   rock5b:
     matches:
       - kea/rock5b/*
+
+  rpi5:
+    matches:
+      - kea/rpi5/*

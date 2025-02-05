@@ -34,12 +34,12 @@ Building
 
 ellesmere:
 cd /vid/software/devel/ubtest/labgrid
-pip uninstall labgrid && pip install -e ".[dev]" && rm -rf build/ labgrid.egg-info/
+pip uninstall labgrid --break-system-packages && pip install -e ".[dev]" --break-system-packages && rm -rf build/ labgrid.egg-info/
 
 ellemere for gitlab
 sudo su - gitlab-runner
 cd /vid/software/devel/ubtest/labgrid
-pip install .
+pip install . --break-system-packages && rm -rf build/ labgrid.egg-info/
 
 kea
 ssh kea
@@ -94,7 +94,7 @@ link                 OK
 jerry                OK
 minnowmax            OK
 zynq_zybo            console broken (labgrid issue 1387)
-tk1                  send only, cannot enter recovery (labgrid issue 1390)
+tk1                  OK
 puma                 no serial output, doesn't work with SD-wire
 salmon               no build, doesn't boot
 xu3                  fails to boot from SD card
@@ -104,7 +104,7 @@ bpi                  OK
 rpi2                 OK
 edison               console broken (labgrid issue 1387)
 bob                  OK, but needs 'powerbtn' on EC console to force board start (broken battery)
-lcdk                 no output
+lcdk                 no builder, but didn't work on labman either
 ff3399               OK
 sn9260               no build, doesn't boot
 coral                OK
@@ -116,5 +116,27 @@ pine64               OK
 c4                   OK
 rpi4                 OK
 rpi0                 OK
+play                 OK
+rpi                  OK
+vf2                  OK
+colibrimx8           OK
+utilite              OK
+rockpro64            OK
+rock3a               OK
+rock5b               OK
 
-21 OK (inc. 3 send only), 10 broken (inc. 3 labgrid issues), total 34
+32 OK (inc. 3 send only), 9 broken (inc. 2 labgrid issues), total 41
+
+
+6-Jan-25
+digi  username root password dbps
+
+rpi:
+[2129395.045712] blk_update_request: critical medium error, dev sdz, sector 9664 op 0x0:(READ) flags 0x80700 phys_seg 240 prio class 0
+
+Tried replacing uSD card, still fails. May be a broken sd-wire?
+
+colibrimx8:
+failing with USB download resource not available
+seemed to fix itself after I power cycled that port on the hub
+

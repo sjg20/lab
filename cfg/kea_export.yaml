@@ -1068,3 +1068,22 @@ rock5b:
     ## hub g8
     match:
       ID_SERIAL_SHORT: da77
+
+rpi5:
+  location: 'lab'
+  USBSerialPort:
+    ## hub g3
+    match:
+      ID_PATH: pci-0000:00:14.0-usb-0:9.1.3:1.0
+
+  USBSDWireDevice:
+    match:
+      'ID_SERIAL_SHORT': 'da78'
+
+  NetworkPowerPort:
+    ## dli_fifth_port3
+    ## Allow legacy plaintext login methods
+    ## Allow plaintext URL logins
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.37
+    index: 3
