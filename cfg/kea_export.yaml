@@ -261,7 +261,7 @@ zynq_zybo:
     ## ttyusb_port5
     ## hub c1
     match:
-      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.1:1.0'
+      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.1:1.1'
       ##ID_SERIAL_SHORT: 210279653540
       ##ID_USB_INTERFACE_NUM: 01
 
@@ -276,13 +276,6 @@ zynq_zybo:
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.19
     index: 5
-
-  HIDRelay:
-    ## usbrelay 0 6
-    ##serial: 6QMBS
-    index: 6
-    match:
-      '@ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
 
 tk1:
   location: 'lab'
