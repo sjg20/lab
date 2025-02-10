@@ -43,10 +43,6 @@ places:
     matches:
       - kea/minnowmax/*
 
-  zynq_zybo:
-    matches:
-      - kea/zynq_zybo/*
-
   tk1:
     matches:
       - kea/tk1/*
@@ -186,3 +182,7 @@ places:
   zybo:
     matches:
       - kea/zybo/*
+
+  zzsoc:
+    matches:
+      - kea/zzsoc/*

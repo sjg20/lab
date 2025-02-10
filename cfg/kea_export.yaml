@@ -316,33 +316,33 @@ tk1:
     match:
       ID_PATH: pci-0000:00:14.0-usb-0:10.1.1
 
-puma:
-  location: 'lab'
-
-  USBSerialPort:
-    ## ttyusb_port6
-    ## hub c2
-    match:
-      '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.2:1.0'
-
-  USBSDWireDevice:
-    ## sdwire4
-    ## hub b9
-    match:
-      'ID_SERIAL_SHORT': '202001064005'
-
-  NetworkPowerPort:
-    ## dli_main_port2
-    model: digitalloggers_http
-    host: http://admin:1234@192.168.4.19
-    index: 2
-
-  HIDRelay:
-    ## usbrelay 0 6=7
-    ##serial: 6QMBS
-    index: 7
-    match:
-      '@ID_PATH': pci-0000:03:00.2-usb-0:5.2.2:1.0
+## puma:
+##   location: 'lab'
+##
+##   USBSerialPort:
+##     ## ttyusb_port6
+##     ## hub c2
+##     match:
+##       '@ID_PATH': 'pci-0000:03:00.2-usb-0:5.2.2:1.0'
+##
+##   USBSDWireDevice:
+##     ## sdwire4
+##     ## hub b9
+##     match:
+##       'ID_SERIAL_SHORT': '202001064005'
+##
+##   NetworkPowerPort:
+##     ## dli_main_port2
+##     model: digitalloggers_http
+##     host: http://admin:1234@192.168.4.19
+##     index: 2
+##
+##   HIDRelay:
+##     ## usbrelay 0 6=7
+##     ##serial: 6QMBS
+##     index: 7
+##     match:
+##       '@ID_PATH': pci-0000:03:00.2-usb-0:5.2.2:1.0
 
 salmon:
   location: 'lab'
@@ -1087,3 +1087,31 @@ rpi5:
     model: digitalloggers_http
     host: http://admin:1234@192.168.4.37
     index: 3
+
+zzsoc:
+  location: 'lab'
+
+  USBSerialPort:
+    ## ttyusb_port6
+    ## hub c2
+    match:
+      ID_PATH: pci-0000:00:14.0-usb-0:9.4.3:1.1
+
+  USBSDWireDevice:
+    ## sdwire4
+    ## hub b9
+    match:
+      'ID_SERIAL_SHORT': '202001064005'
+
+  NetworkPowerPort:
+    ## dli_main_port2
+    model: digitalloggers_http
+    host: http://admin:1234@192.168.4.19
+    index: 2
+
+  HIDRelay:
+    ## usbrelay 0 6=7
+    ##serial: 6QMBS
+    index: 3
+    match:
+      'ID_PATH': 'pci-0000:00:14.0-usb-0:10.1.2'
